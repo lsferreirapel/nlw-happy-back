@@ -1,0 +1,43 @@
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+// Rota = conjunto
+// Recurso = users
+
+// Métodos HTTP = GET, POST, PUT, DELETE
+// GET = Buscar uma informação (Lista, item)
+// POST = Criando uma informação
+
+// PUT = Editando uma informação
+// DELETE = Deletando uma informação
+
+
+// Params
+// Query: http://localhost:3333/users?search=diego&page=2
+// Route Params: DELETE http://localhost:3333/users/1 (Identificar um recurso)
+// Body: http://localhost:3333/users
+
+app.post('/users/:id', (request, response) => {
+  console.log(request.query);
+  console.log(request.params);
+  console.log(request.body);
+
+  return response.json({message: 'Hello World'});
+})
+
+app.listen(3333);
+
+
+----------------------------------------------------------------
+Banco de dados: sqlite3
+Interação: ORM - typeORM
+
+// Driver nativo, Query builder, ORM
+// Object Relational Mapping
+
+// users
+// class User
+
+// 3 users
+// User User User
